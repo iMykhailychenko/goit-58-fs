@@ -61,7 +61,7 @@ export const store = configureStore({
 // export const getPostsAction = async dispatch => {
 //   dispatch({ type: 'LOADING' });
 //   try {
-//     const url = 'http://70.34.201.18:8080/posts?limit=10&page=1';
+//     const url = 'https://goit-fs.netlify.app/api/posts?limit=10&page=1';
 //     const responce = await fetch(url);
 //     const data = await responce.json();
 

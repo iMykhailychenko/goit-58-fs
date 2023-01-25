@@ -6,7 +6,7 @@ export const postsAsyncThunk = createAsyncThunk(
   async (search = '') => {
     console.log(search);
 
-    const { data } = await axios.get('http://70.34.201.18:8080/posts', {
+    const { data } = await axios.get('https://goit-fs.netlify.app/api/posts', {
       params: {
         search,
         limit: 4,
@@ -25,7 +25,7 @@ export const postsAsyncThunk = createAsyncThunk(
 // export const postsAsyncThunk = async dispatch => {
 //   dispatch(postsLoadingAction());
 //   try {
-//     const { data } = await axios.get('http://70.34.201.18:8080/posts');
+//     const { data } = await axios.get('https://goit-fs.netlify.app/api/posts');
 //     dispatch(postsSuccessAction(data));
 //   } catch {
 //     dispatch(postsErrorAction());
