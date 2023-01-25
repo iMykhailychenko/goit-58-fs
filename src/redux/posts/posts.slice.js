@@ -1,5 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
+
 import { STATUS } from '../../constants/status.constants';
+
 import { postsInitState } from './posts.init-state';
 import { postsAsyncThunk } from './posts.thunk';
 
