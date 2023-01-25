@@ -1,4 +1,5 @@
-import { configureStore, createReducer } from '@reduxjs/toolkit';
+import { configureStore } from '@reduxjs/toolkit';
+
 import { postsReducer } from './posts/posts.slice';
 
 export const store = configureStore({

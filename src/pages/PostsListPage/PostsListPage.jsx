@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
+
 import { useDispatch, useSelector } from 'react-redux';
+
 import { Button } from '../../components/Button/Button';
 import { NotFound } from '../../components/NotFound/NotFound';
 import { PostsItem } from '../../components/Posts/PostsItem';
