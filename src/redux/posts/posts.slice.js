@@ -8,18 +8,6 @@ import { postsAsyncThunk } from './posts.thunk';
 const postsSlice = createSlice({
   name: 'posts',
   initialState: postsInitState,
-  reducers: {
-    // postsLoadingAction: state => {
-    //   state.status = STATUS.loading;
-    // },
-    // postsSuccessAction: (state, { payload }) => {
-    //   state.status = STATUS.success;
-    //   state.posts = payload;
-    // },
-    // postsErrorAction: state => {
-    //   state.status = STATUS.error;
-    // },
-  },
   extraReducers: {
     [postsAsyncThunk.pending]: state => {
       state.status = STATUS.loading;
@@ -33,7 +21,5 @@ const postsSlice = createSlice({
     },
   },
 });
-
-// export const { postsLoadingAction, postsErrorAction, postsSuccessAction } = postsSlice.actions;
 
 export const postsReducer = postsSlice.reducer;

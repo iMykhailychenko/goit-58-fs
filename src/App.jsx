@@ -14,6 +14,9 @@ const SinglePostPage = lazy(() =>
 );
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
 const PostsListPage = lazy(() => import('./pages/PostsListPage/PostsListPage'));
+const RTKPostsListPage = lazy(() =>
+  import('./pages/RTKPostsListPage/RTKPostsListPage'),
+);
 const CounterPage = lazy(() => import('./pages/CounterPage/CounterPage'));
 const UsersPage = lazy(() => import('./pages/UsersPage/UsersPage'));
 
@@ -29,6 +32,7 @@ export const App = () => {
             <Route path="/users" element={<UsersPage />} />
 
             <Route path="/posts" element={<PostsListPage />} />
+            <Route path="/rtk-posts" element={<RTKPostsListPage />} />
 
             <Route path="/posts/:postId" element={<SinglePostPage />}>
               <Route path="comments" element={<CommentsPage />} />

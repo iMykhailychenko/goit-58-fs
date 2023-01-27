@@ -1,19 +1,10 @@
-import axios from 'axios';
 import formatDistanceToNow from 'date-fns/formatDistanceToNow';
 import { Link, useLocation } from 'react-router-dom';
-import { toast } from 'react-toastify';
 
-import { BASE_URL } from '../../constants/api.constants';
 import { cutString } from '../../helpers/cut-string';
 
-export const PostsItem = ({ post }) => {
+export const PostsItem = ({ post, onDelete }) => {
   const location = useLocation();
-
-  const deletePost = () => {
-    axios.delete(BASE_URL + '/posts/' + post.id).then(() => {
-      toast.success('Deleted');
-    });
-  };
 
   return (
     <div className="col-12 col-md-6 col-xxl-4 mb-4">
@@ -41,7 +32,7 @@ export const PostsItem = ({ post }) => {
           <div className="d-flex">
             <button
               type="button"
-              onClick={deletePost}
+              onClick={() => onDelete && onDelete(post.id)}
               className="btn btn-danger"
             >
               Delete post
