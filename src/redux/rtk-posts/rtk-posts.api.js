@@ -16,13 +16,11 @@ export const rtkPostsApi = createApi({
         params,
       }),
 
-      providesTags: result =>
-        result.data
-          ? [
-              ...result.data.map(({ id }) => ({ type: 'Posts', id })),
-              { type: 'Posts', id: 'LIST' },
-            ]
-          : [{ type: 'Posts', id: 'LIST' }],
+      providesTags: result => {
+        return result.data
+          ? result.data.map(({ id }) => ({ type: 'Posts', id })).concat([{ type: 'Posts', id: 'LIST' }])
+          : [{ type: 'Posts', id: 'LIST' }];
+      },
     }),
 
     deletePost: builder.mutation({
