@@ -5,6 +5,7 @@ import { useParams, Link, Outlet, useLocation } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 import { Loader } from '../../components/Loader/Loader';
+import { BASE_URL } from '../../constants/api.constants';
 
 const SinglePostPage = () => {
   const { postId } = useParams();
@@ -18,7 +19,7 @@ const SinglePostPage = () => {
     setIsLoading(true);
 
     axios
-      .get('https://goit-fs.netlify.app/api/posts/' + postId)
+      .get(BASE_URL + '/posts/' + postId)
       .then(({ data }) => setPost(data))
       .catch(() => {
         toast.error('Something went wrong!');

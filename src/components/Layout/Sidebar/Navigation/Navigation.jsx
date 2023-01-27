@@ -21,6 +21,14 @@ export const Navigation = () => {
         <NavLink to="new-post" className={getActiveClassName}>
           Create new post
         </NavLink>
+
+        <NavLink to="counter" className={getActiveClassName}>
+          Counter
+        </NavLink>
+
+        <NavLink to="users" className={getActiveClassName}>
+          Users list
+        </NavLink>
       </div>
     </div>
   );

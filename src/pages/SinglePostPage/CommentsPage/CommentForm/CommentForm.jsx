@@ -4,6 +4,8 @@ import axios from 'axios';
 import classNames from 'classnames';
 import { toast } from 'react-toastify';
 
+import { BASE_URL } from '../../../../constants/api.constants';
+
 export const CommentForm = ({ setComments }) => {
   // TODO change to dynamic value
   const postId = 10;
@@ -24,7 +26,7 @@ export const CommentForm = ({ setComments }) => {
 
     setIsLoading(true);
     axios
-      .post(`https://goit-fs.netlify.app/api/posts/${postId}/comments`, {
+      .post(`${BASE_URL}/posts/${postId}/comments`, {
         content,
       })
       .then(data => {

@@ -1,12 +1,4 @@
-// import { useDispatch } from 'react-redux';
-
 const HomePage = () => {
-  // const dispatch = useDispatch();
-
-  const handleClick = () => {
-    // dispatch(getPostsAction);
-  };
-
   return (
     <>
       <div className="p-5 mb-4 bg-white border rounded-3">
@@ -16,11 +8,7 @@ const HomePage = () => {
             Using a series of utilities, you can create this jumbotron, just
             like the one in previous versions of Bootstrap.
           </p>
-          <button
-            onClick={handleClick}
-            className="btn btn-primary btn-lg"
-            type="button"
-          >
+          <button className="btn btn-primary btn-lg" type="button">
             Marketing info
           </button>
         </div>

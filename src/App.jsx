@@ -14,6 +14,8 @@ const SinglePostPage = lazy(() =>
 );
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
 const PostsListPage = lazy(() => import('./pages/PostsListPage/PostsListPage'));
+const CounterPage = lazy(() => import('./pages/CounterPage/CounterPage'));
+const UsersPage = lazy(() => import('./pages/UsersPage/UsersPage'));
 
 export const App = () => {
   return (
@@ -22,6 +24,9 @@ export const App = () => {
         <Suspense fallback={<p>Loading...</p>}>
           <Routes>
             <Route path="" element={<HomePage />} />
+
+            <Route path="/counter" element={<CounterPage />} />
+            <Route path="/users" element={<UsersPage />} />
 
             <Route path="/posts" element={<PostsListPage />} />
 

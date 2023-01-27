@@ -5,6 +5,8 @@ import { formatDistance } from 'date-fns';
 import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
+import { BASE_URL } from '../../../../constants/api.constants';
+
 export const CommentList = ({ comments, setComments }) => {
   // TODO change to dynamic value
   const { postId } = useParams();
@@ -13,7 +15,7 @@ export const CommentList = ({ comments, setComments }) => {
 
   const fetchComments = useCallback(() => {
     return axios
-      .get(`https://goit-fs.netlify.app/api/posts/${postId}/comments`)
+      .get(`${BASE_URL}/posts/${postId}/comments`)
       .then(setComments)
       .catch(() => {
         toast.error('Something went wrong!');

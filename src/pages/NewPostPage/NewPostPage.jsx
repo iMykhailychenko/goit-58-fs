@@ -4,6 +4,7 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 
 import { Loader } from '../../components/Loader/Loader';
+import { BASE_URL } from '../../constants/api.constants';
 
 const initialState = {
   title: '',
@@ -35,7 +36,7 @@ const NewPostPage = () => {
     setIsLoading(true);
 
     axios
-      .post('https://goit-fs.netlify.app/api/posts', form)
+      .post(BASE_URL + '/posts', form)
       .then(() => {
         toast.success('You have successfully created a new post!');
       })

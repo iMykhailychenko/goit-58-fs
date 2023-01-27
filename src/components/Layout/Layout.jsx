@@ -1,5 +1,7 @@
 import { ToastContainer } from 'react-toastify';
 
+import { ConfettiContainer } from '../../helpers/Confetti/Confetti';
+
 import { Sidebar } from './Sidebar/Sidebar';
 
 export const Layout = ({ children }) => {
@@ -16,6 +18,7 @@ export const Layout = ({ children }) => {
         </main>
       </div>
 
+      <ConfettiContainer />
       <ToastContainer />
     </>
   );

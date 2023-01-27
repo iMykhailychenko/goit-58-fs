@@ -3,17 +3,16 @@ import formatDistanceToNow from 'date-fns/formatDistanceToNow';
 import { Link, useLocation } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
+import { BASE_URL } from '../../constants/api.constants';
 import { cutString } from '../../helpers/cut-string';
 
 export const PostsItem = ({ post }) => {
   const location = useLocation();
 
   const deletePost = () => {
-    axios
-      .delete('https://goit-fs.netlify.app/api/posts/' + post.id)
-      .then(() => {
-        toast.success('Deleted');
-      });
+    axios.delete(BASE_URL + '/posts/' + post.id).then(() => {
+      toast.success('Deleted');
+    });
   };
 
   return (
